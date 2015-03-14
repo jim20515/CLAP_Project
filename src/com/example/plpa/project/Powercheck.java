@@ -16,7 +16,7 @@ public class Powercheck extends BroadcastReceiver {
 		 if(intent.getAction().toString().equals(POWER_CHECKER))
 		    {
 		     		      
-		      /* å‘¼å«æ¯é«”Activityï¼Œå–šé†’åŸä¸»ç¨‹å¼ */
+		      /* ©I¥s¥ÀÅéActivity¡A³ê¿ô­ì¥Dµ{¦¡ */
 		      Intent mRunPackageIntent = new Intent(context, PLPA_CLAP.class); 
 		      mRunPackageIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		     

@@ -16,27 +16,27 @@ public class UpdateCheck extends BroadcastReceiver {
 
 		 if(intent.getAction().toString().equals(HIPPO_SERVICE_IDENTIFIER))
 		    {
-		      /* ä»¥Bundleç‰©ä»¶è§£é–‹å‚³ä¾†çš„åƒæ•¸ */
+		      /* ¥HBundleª«¥ó¸Ñ¶}¶Ç¨Óªº°Ñ¼Æ */
 		      Bundle mBundle01 = intent.getExtras();
 		      String strParam1="";
 		      String strParam2="";
 		      String strParam3="";
-		      /* è‹¥Bundleç‰©ä»¶ä¸ç‚ºç©ºå€¼ï¼Œå–å‡ºåƒæ•¸ */
+		      /* ­YBundleª«¥ó¤£¬°ªÅ­È¡A¨ú¥X°Ñ¼Æ */
 		      if (mBundle01 != null)
 		      {
-		        /* å°‡å–å‡ºçš„STR_PARAM01åƒæ•¸ï¼Œå­˜æ”¾æ–¼strParam1å­—ä¸²ä¸­ */
+		        /* ±N¨ú¥XªºSTR_PARAM01°Ñ¼Æ¡A¦s©ñ©óstrParam1¦r¦ê¤¤ */
 		        strParam1 = mBundle01.getString("testID");
 		        strParam2 = mBundle01.getString("testScript");
 		        strParam3 = mBundle01.getString("testDescript");
 		        Log.v(TAG,"UpdateCheck"+strParam1+strParam2+strParam3);
 		      }
 		      
-		      /* å‘¼å«æ¯é«”Activityï¼Œå–šé†’åŸä¸»ç¨‹å¼ */
+		      /* ©I¥s¥ÀÅéActivity¡A³ê¿ô­ì¥Dµ{¦¡ */
 		      Intent mRunPackageIntent = new Intent(context, PLPA_CLAP.class); 
 		      mRunPackageIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		      if(strParam1!="")
 		      {
-		        /* é‡æ–°å¯¦é©—IDå›å‚³ */
+		        /* ­«·s¹êÅçID¦^¶Ç */
 		        mRunPackageIntent.putExtra("OriginTestId", strParam1);
 		        mRunPackageIntent.putExtra("NewTestScript", strParam2);
 		        mRunPackageIntent.putExtra("NewTestDescript", strParam3);
