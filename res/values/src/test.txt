@@ -1,0 +1,10 @@
+log
+	acc.x,
+	acc.y,
+	acc.z,
+	gps.longitute,
+	gps.latitude
+where
+    gps.speed >= 30
+every
+	30
