@@ -118,7 +118,7 @@ public class PLPA_CLAP extends Activity implements OnClickListener,
 	private String[] authcodeList;
 
 	private static String QUEUE_NAME = "clap";
-	private static String AMQPHOST = "clap.iis.sinica.edu.tw";
+	private static String AMQPHOST = "140.119.221.34";
 	private static String AMQPVHOST = "clap";
 	private static String AMQPUSER = "clap";
 	private static String AMQPPASSWORD = "clap@nccu";
@@ -587,7 +587,7 @@ public class PLPA_CLAP extends Activity implements OnClickListener,
 			Log.v(TAG, "New checkId");
 			AsyncTask<String, Void, String> Idtext;
 			Idtext = new readREST()
-					.execute(" http://clap.iis.sinica.edu.tw/ws/rc/getid "); // 受測者ID和授權碼RESTFUL
+					.execute(" http://140.119.221.34/ws/rc/getid "); // 受測者ID和授權碼RESTFUL
 			try {
 				JSONObject jCid = new JSONObject(Idtext.get());
 				int count = jCid.length();
@@ -627,7 +627,7 @@ public class PLPA_CLAP extends Activity implements OnClickListener,
 		// REST
 		AsyncTask<String, Void, String> RESTtext; // 實驗列表REST
 		RESTtext = new readREST()
-				.execute(" http://clap.iis.sinica.edu.tw/ws/le/getall/Android/"
+				.execute(" http://140.119.221.34/ws/le/getall/Android/"
 						+ DeviceOs + "/" + Device + "/" + ClicentDeviceID + "/"
 						+ AuthCode);
 		try {

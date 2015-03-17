@@ -201,7 +201,7 @@ public class LogService extends Service implements LocationListener,SensorEventL
 	public String gsmspn;
 	private Map<String, String> mapParser;
 	private static String QUEUE_NAME = "clap";
-	private static String AMQPHOST = "clap.iis.sinica.edu.tw";
+	private static String AMQPHOST = "140.119.221.34";
 	private static String AMQPVHOST = "clap";
 	private static String AMQPUSER = "clap";
 	private static String AMQPPASSWORD = "clap@nccu";
@@ -1114,8 +1114,8 @@ try {
 	private void CheckExperimentUpdate() {
 		//REST
 		AsyncTask<String, Void, String> RESTtext;
-		RESTtext = new readREST().execute(" http://clap.iis.sinica.edu.tw/ws/le/getall/Android/"+DeviceOs+"/"+Device+"/"+deviceId+"/"+AuthCode);
-		System.out.println(" http://clap.iis.sinica.edu.tw/ws/le/getall/Android/"+DeviceOs+"/"+Device+"/"+deviceId+"/"+AuthCode);
+		RESTtext = new readREST().execute(" http://140.119.221.34/ws/le/getall/Android/"+DeviceOs+"/"+Device+"/"+deviceId+"/"+AuthCode);
+		System.out.println(" http://140.119.221.34/ws/le/getall/Android/"+DeviceOs+"/"+Device+"/"+deviceId+"/"+AuthCode);
 		try {
 			
 			JSONObject jObj = new JSONObject(RESTtext.get());	
